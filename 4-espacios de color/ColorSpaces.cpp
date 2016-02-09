@@ -11,7 +11,7 @@ int main(int argc, char** argv )
         return -1;
     }
 
-    Mat RGB, HSV;
+    Mat RGB, HSV, Lab;
     RGB = imread( argv[1], 1 );
 
     if ( !RGB.data )
@@ -58,6 +58,26 @@ int main(int argc, char** argv )
     namedWindow("V", WINDOW_AUTOSIZE );
     imshow("V", hsv_planes[2]);
     imwrite("V.png", hsv_planes[2]);
+    
+    cvtColor(RGB, Lab, CV_BGR2Lab);
+    vector<Mat> Lab_planes;
+    split(Lab, Lab_planes);
+    
+    namedWindow("Lab", WINDOW_AUTOSIZE );
+    imshow("Lab", Lab);
+    imwrite("Lab.png", Lab);
+    
+    namedWindow("LabL", WINDOW_AUTOSIZE );
+    imshow("LabL", Lab_planes[0]);
+    imwrite("LabL.png", Lab_planes[0]);
+    
+    namedWindow("LabA", WINDOW_AUTOSIZE );
+    imshow("LabA", Lab_planes[1]);
+    imwrite("LabA.png", Lab_planes[1]);
+    
+    namedWindow("LabB", WINDOW_AUTOSIZE );
+    imshow("LabB", Lab_planes[2]);
+    imwrite("LabB.png", Lab_planes[2]);
 
     waitKey(0);
 
