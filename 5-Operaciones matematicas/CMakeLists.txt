@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( MathOperations )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( MathOperations MathOperations.cpp )
+target_link_libraries( MathOperations ${OpenCV_LIBS} )
