@@ -33,6 +33,7 @@ int main(int argc, char** argv )
     
     namedWindow("dst3", WINDOW_AUTOSIZE );
     imshow("dst3", dst);
+    imwrite("dst3.jpg", dst);
     
     kernelSize = 9;
     kernel = Mat::ones(kernelSize, kernelSize, CV_32F) / (float)(kernelSize * kernelSize);
@@ -42,6 +43,7 @@ int main(int argc, char** argv )
     
     namedWindow("dst9", WINDOW_AUTOSIZE );
     imshow("dst9", dst);
+    imwrite("dst9.jpg", dst);
     
     kernelSize = 15;
     kernel = Mat::ones(kernelSize, kernelSize, CV_32F) / (float)(kernelSize * kernelSize);
@@ -51,6 +53,7 @@ int main(int argc, char** argv )
     
     namedWindow("dst15", WINDOW_AUTOSIZE );
     imshow("dst15", dst);
+    imwrite("dst15.jpg", dst);
     
     waitKey(0);
 
