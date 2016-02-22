@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( Transformaciones )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( Transformaciones Transformaciones.cpp )
+target_link_libraries( Transformaciones ${OpenCV_LIBS} )
