@@ -47,7 +47,6 @@ int main(int arc, char* argv[])
 	Mat response_data(NENTRE, 1, CV_32FC1);
 	Mat test_data(NENTRE, 2, CV_32FC1);
 	Mat	test_data_2(1, 2, CV_32FC1);
-	Mat clasif(1, 1, CV_32FC1);
 
 	cout << "Ejemplos para el entrenamiento" << endl << endl;
 
@@ -103,6 +102,7 @@ int main(int arc, char* argv[])
 
 	cout << endl << "El numero total de piezas a clasificar es: " << contours.size() << endl;
 
+    Mat clasif(contours.size(), 1, CV_32FC1);
 	for (size_t idx = 0; idx < contours.size(); idx++){
 		area = contourArea(contours[idx], false);
 		perimetro = arcLength(contours[idx], 1);
