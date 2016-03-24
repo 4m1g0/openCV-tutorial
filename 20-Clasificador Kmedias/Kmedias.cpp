@@ -21,7 +21,7 @@ int main()
 	imagen = imread("Clasif.jpg", 1);
 
 	// creación de imatrices para almacenar la imformación
-	Mat	test_data(2, 3, CV_32F);
+	Mat	test_data(10, 2, CV_32F);
 
 	imagen_bin = Mat(imagen.size(), 8, 1);
 	cvtColor(imagen, imagen, CV_BGR2GRAY);
