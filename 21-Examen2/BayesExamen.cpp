@@ -193,11 +193,7 @@ int main(int argc, char* argv[])
 		imagen_color = image.clone();
 		Scalar color(0, 0, 255);
 		drawContours(imagen_color, contours2, relation[i], color, 2);
-		
 		imshow("ventana", imagen_color);
-		char name[] = "imagen%d.jpg";
-		sprintf(name, (char) ((char)i - (char)'0'));
-		imwrite(name, imagen_color);
 		cout << "La pieza resaltada es un " << nombre_clases[(int)clasif.at<float>(i)] << endl;
 		
 		cantidad[(int)clasif.at<float>(i)]++;
